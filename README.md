@@ -8,3 +8,8 @@
     <a href="https://www.youtube.com/watch?v=OX9HJsJUDxA&list=PLai5B987bZ9CoVR-QEIN9foz4QCJ0H2Y8&index=1">here</a>.
   </div>
 </div> 
+<h3>Contents</h3>
+<ol style="margin-top: 5px; background-color: #333; color: white;">
+  <li>guessing game</li>
+  <li>basics</li>
+</ol>
