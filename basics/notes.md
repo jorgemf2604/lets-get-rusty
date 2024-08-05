@@ -128,3 +128,85 @@ fn main() {
 ### functions with return values 
 - We do not name return values but we must declare their type after an arrow.
 - You can return a value explicitly with return or implicitly (the last expression of the body of the function without semicolon). If we use semicolon the expression will turn into a statement and we will get an error (mismatched types: we said we were going to return a specific type and we returned () - the unit type). 
+
+## Control flow 
+### if expressions 
+- the condition must be a bool (no truthy-falsy values)
+- if is an expression (evaluates to a value) can be used with let statements.
+```
+fn main() {
+    let condition = true;
+    let number = if condition { 5 } else { 6 };
+
+    println!("The value of number is: {number}");
+}
+```
+To do this both the if and else arm must be the same type (we will get an error if the types are mismatched).
+
+### loop
+- It is a infinite loop but we have the keywords break and continue to control it.
+- You can add a value you want to return to the outerloop by placing the value after the break statement. 
+```
+fn main() {
+    let mut counter = 0;
+
+    let result = loop {
+        counter += 1;
+
+        if counter == 10 {
+            break counter * 2;
+        }
+    };
+
+    println!("The result is {result}");
+}
+```
+- You can use loop labels to differenciate between multiple loops (loop labels must start with a single quote)
+```
+fn main() {
+    let mut count = 0;
+    'counting_up: loop {
+        println!("count = {count}");
+        let mut remaining = 10;
+
+        loop {
+            println!("remaining = {remaining}");
+            if remaining == 9 {
+                break;
+            }
+            if count == 2 {
+                break 'counting_up;
+            }
+            remaining -= 1;
+        }
+
+        count += 1;
+    }
+    println!("End count = {count}");
+}
+
+```
+
+### while
+old good while loop
+
+### for
+```
+fn main() {
+    let a = [10, 20, 30, 40, 50];
+
+    for element in a {
+        println!("the value is: {element}");
+    }
+}
+```
+
+reverse loop using a Range:
+```
+fn main() {
+    for number in (1..4).rev() {
+        println!("{number}!");
+    }
+    println!("LIFTOFF!!!");
+}
+```
