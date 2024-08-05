@@ -104,3 +104,27 @@ let first = a[0];
 
 #### Accessing invalid indexes in an array
 The program will panic at runtime, preventing accessing invalid memory (we are looking at you C).
+
+## Functions
+- We must declare the types of each parameter
+
+### Statements and Expressions
+- Statements are instructions to perform some action and do not return a value 
+- Expressions evaluate to a resultant value.
+
+A new scope block created with curly brackets is an expression:
+```
+fn main() {
+    let y = {
+        let x = 3;
+        x + 1
+    };
+
+    println!("The value of y is: {y}");
+    // the blocks evaluates to 4
+}
+```
+
+### functions with return values 
+- We do not name return values but we must declare their type after an arrow.
+- You can return a value explicitly with return or implicitly (the last expression of the body of the function without semicolon). If we use semicolon the expression will turn into a statement and we will get an error (mismatched types: we said we were going to return a specific type and we returned () - the unit type). 
